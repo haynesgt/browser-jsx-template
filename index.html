@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!-- Simple index.html with in-browser jsx compilation -->
+<head>
+<title>App</title>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-router-dom@5.2.0/umd/react-router-dom.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.js" crossorigin></script>
+<!-- Useful things
+https://github.com/johndiiorio/react-useinterval/blob/master/src/index.tsx
+https://github.com/dance2die/react-use-localstorage/blob/master/src/index.ts
+-->
+<!-- no 404 request for icon -->
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+<style>
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+const app = document.getElementById("app");
+function App() {
+  const [ count, setCount ] = useState(0);
+  return (
+    <div>
+    <p>Edit me!</p>
+    <p>{count} <button onClick={(e) => setCount((oldCount) => oldCount + 1)}>+</button>
+    </p>
+    </div>
+  )
+}
+ReactDOM.render(React.createElement(App), document.getElementById("app"))
+</script>
+</body>
+</html>
